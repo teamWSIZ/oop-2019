@@ -9,15 +9,20 @@
           <br>
           x = {{x}}
           <br>
-          customers  = {{customers}}
+          customers = {{customers}}
+          <br>
+          random user = {{randomUser}}
         </p>
 
       </div>
       <div class="card-footer">
         <p>
           <button class="btn btn-success mr-1" (click)="incrementX()">+1</button>
-          <button class="btn btn-outline-success" (click)="decrementX()">-1</button>
-          <button class="btn btn-outline-info" (click)="customers=usersService.getUsers()">load customers</button>
+          <button class="btn btn-outline-success mr-1" (click)="decrementX()">-1</button>
+          <button class="btn btn-outline-info mr-1" (click)="customers=usersService.getUsers()">load customers</button>
+          <button class="btn btn-outline-info mr-1" (click)="randomUser=createRandomUser()">random user</button>
+          <button class="btn btn-outline-info mr-1" (click)="secretService.sayHello()">greetUser</button>
+
         </p>
 
       </div>

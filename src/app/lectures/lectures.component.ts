@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from "../users.service";
+import {Utils} from "../scratch/utils";
+import {SecretService} from "../secret.service";
 
 @Component({
   selector: 'app-lectures',
@@ -9,9 +11,10 @@ import {UsersService} from "../users.service";
 export class LecturesComponent implements OnInit {
   x = 12;
   customers = [];
+  randomUser: string;
 
   //tu ustawiamy, że mamy mieć dostęp do serwisu UsersService
-  constructor( public usersService : UsersService) {
+  constructor(public usersService : UsersService, private secretService : SecretService) {
   }
 
   ngOnInit() {
@@ -24,5 +27,13 @@ export class LecturesComponent implements OnInit {
 
   decrementX() {
     this.x -= 1;
+  }
+
+  createRandomUser() {
+    return 'user' + Utils.gerRandomNumber();
+  }
+
+  delegateGreetUser() {
+    alert(this.secretService.sayHello());
   }
 }
