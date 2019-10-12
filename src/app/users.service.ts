@@ -22,6 +22,11 @@ export class UsersService {
     return username;
   }
 
+  static getRandomUser() {
+    let username = 'User' + Math.floor(Math.random() * 100);
+    return username;
+  }
+
 
 
 }

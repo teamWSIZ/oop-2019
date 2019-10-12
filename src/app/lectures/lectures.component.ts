@@ -30,4 +30,12 @@ export class LecturesComponent implements OnInit {
   reloadCustomers() {
     this.customers = this.usersService.getUsers();
   }
+
+  randomCustomer() {
+    this.nextuser = UsersService.getRandomUser();
+  }
+
+  nextCustomer() {
+    this.nextuser = this.usersService.getNextUser()
+  }
 }
