@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { NiceFooterComponent } from './nice-footer/nice-footer.component';
 import { LecturesComponent } from './lectures/lectures.component';
+import { BrewreryComponent } from './brewrery/brewrery.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LecturesComponent } from './lectures/lectures.component';
     MenuComponent,
     NiceFooterComponent,
     LecturesComponent,
+    BrewreryComponent,
   ],
   imports: [
     BrowserModule,
