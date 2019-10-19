@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NiceFooterComponent } from './nice-footer/nice-footer.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { BrewreryComponent } from './brewrery/brewrery.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { BrewreryComponent } from './brewrery/brewrery.component';
     LecturesComponent,
     BrewreryComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [MenuComponent],
   bootstrap: [AppComponent]
 })

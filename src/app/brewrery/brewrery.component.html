@@ -9,7 +9,11 @@
   <div class="col-md-6 mt-1">
     <div class="card">
       <div class="card-header">Brew hall</div>
-      <div class="card-body"></div>
+      <div class="card-body">
+        <input type="text" class="form-control" name="beerQuantity" [(ngModel)]="beerQuantity">
+        <button class="btn btn-outline-info" (click)="brewService.check(beerQuantity)">
+          Are ingredients there for {{beerQuantity}}hL miodowe?</button>
+      </div>
       <div class="card-footer"></div>
     </div>
     <div class="card">
