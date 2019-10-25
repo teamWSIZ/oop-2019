@@ -8,7 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
 import { NiceFooterComponent } from './nice-footer/nice-footer.component';
 import { LecturesComponent } from './lectures/lectures.component';
-import { BrewreryComponent } from './brewrery/brewrery.component';
+import { BreweryComponent } from './brewery/brewery.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -19,7 +19,7 @@ import {FormsModule} from "@angular/forms";
     MenuComponent,
     NiceFooterComponent,
     LecturesComponent,
-    BrewreryComponent,
+    BreweryComponent,
   ],
     imports: [
         BrowserModule,

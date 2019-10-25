@@ -5,13 +5,22 @@ import {BeerType} from "./model/beer-type";
   providedIn: 'root'
 })
 export class BeerStoreService {
-  midoweStorage: number;
+  midoweStorage: number;  //todo: w przyszłości to powinno być zamienione na map (beer)name -> number
   constructor() {
     this.midoweStorage = 0;
   }
 
-  storeBeer(beerType: BeerType, producedBeer: number) {
-    console.log(`Storing ${producedBeer}hL of ${beerType.name}`);
-    this.midoweStorage += producedBeer;
+  /**
+   * Realizuje akcję magazynowania `units` jednostek piwa typu `beerType`.
+   *
+   * @param units
+   * @param beerType
+   */
+  storeBeer(units: number, beerType: BeerType) {
+    console.log(`Storing ${units}hL of ${beerType.name}`);
+    this.midoweStorage += units;
   }
+
+
+
 }

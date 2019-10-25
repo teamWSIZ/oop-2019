@@ -19,7 +19,7 @@ export class IngredientService {
   }
 
   /**
-   * Odpowiada czy w magazynie jest dość składników na `quantity` (hektolitrów) piwa
+   * Odpowiada czy w magazynie jest dość składników na `quantity` jednostek piwa
    * typu `beerType`.
    */
   ingredientsAvailable(beerType: BeerType, quantity: number) : boolean {
@@ -35,6 +35,15 @@ export class IngredientService {
     console.log(`Pobieram składniki na ilość ${quantity} piwa typu ${beerType.name} `);
     //odejmujemy składniki transportując je do hali piwowarczej...
     this.water -= quantity * beerType.water;  //zabieamy wodę...
+  }
+
+  /**
+   * Funkcja realizująca akcję dopełnienia magazynu nowymi składnikami.
+   * @param ingredientName
+   * @param quantity
+   */
+  ingredientShipmentArrival(ingredientName: string, quantity: number) {
+      //todo: dodać odpowiedni składnik
   }
 
 

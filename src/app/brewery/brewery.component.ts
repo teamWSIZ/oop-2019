@@ -3,10 +3,10 @@ import {BrewService} from "../brew.service";
 
 @Component({
   selector: 'app-brewrery',
-  templateUrl: './brewrery.component.html',
-  styleUrls: ['./brewrery.component.less']
+  templateUrl: './brewery.component.html',
+  styleUrls: ['./brewery.component.less']
 })
-export class BrewreryComponent implements OnInit {
+export class BreweryComponent implements OnInit {
   beerQuantity: 0;
 
   constructor(public brewService: BrewService) {

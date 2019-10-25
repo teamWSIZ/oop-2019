@@ -11,14 +11,22 @@
       <div class="card-header">Brew hall</div>
       <div class="card-body">
         <input type="text" class="form-control" name="beerQuantity" [(ngModel)]="beerQuantity">
-        <button class="btn btn-outline-info" (click)="brewService.check(beerQuantity)">
+        <button class="btn btn-outline-info" (click)="brewService.ingredientsAvailable(beerQuantity, null)">
           Are ingredients there for {{beerQuantity}}hL miodowe?</button>
       </div>
       <div class="card-footer"></div>
     </div>
-    <div class="card">
+    <div class="card mt-1" >
       <div class="card-header">Beer store</div>
-      <div class="card-body"></div>
+      <div class="card-body text-white" style="
+      background: url('assets/brewingstorage.jpg') no-repeat center;
+      background-color: rgba(255,255,255,0.5);">
+        <ul>
+          <li> progress bar: storage of `miodowe`</li>
+          <li> progress bar: storage of `porter`</li>
+          <li> progress bar: storage of `tyskie`</li>
+        </ul>
+      </div>
       <div class="card-footer"></div>
     </div>
 
