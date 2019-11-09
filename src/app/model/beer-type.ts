@@ -7,7 +7,8 @@ export class BeerType {
   final_volume: number; //ile hL piwa powstanie z wszystkich składników
 
 
-  constructor(name: string, water: number, sugar: number, yeast: number, hop: number, final_volume: number) {
+  constructor(name: string, water: number, sugar: number, yeast: number,
+              hop: number, final_volume: number) {
     this.name = name;
     this.water = water;
     this.sugar = sugar;

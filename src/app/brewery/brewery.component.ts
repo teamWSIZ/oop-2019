@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BrewService} from "../brew.service";
+import {IngredientService} from "../ingredient.service";
 
 @Component({
   selector: 'app-brewrery',
@@ -9,7 +10,8 @@ import {BrewService} from "../brew.service";
 export class BreweryComponent implements OnInit {
   beerQuantity: 0;
 
-  constructor(public brewService: BrewService) {
+  constructor(public brewService: BrewService,
+              public ingredientService: IngredientService) {
 
   }
 
