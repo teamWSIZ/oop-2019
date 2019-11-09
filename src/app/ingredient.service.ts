@@ -14,16 +14,13 @@ export class IngredientService {
 
   constructor() {
     //początkowy stan magazynu:
-    this.water = 100;
-    this.sugar = 100;
-    this.yeast = 100;
-    this.hop = 100;
 
     //ustawianie wartości w mapie
     this.ingredients.set('water', 100);
     this.ingredients.set('sugar', 100);
     this.ingredients.set('hop', 100);
     this.ingredients.set('yeast', 100);
+    this.ingredients.set('cloves', 100);
     //wyciąganie wartości z mapy
     let water = this.ingredients.get('water');
 
@@ -68,10 +65,10 @@ export class IngredientService {
   ingredientShipmentArrival(ingredientName: string, quantity: number) {
       //todo: dodać odpowiedni składnik
     //np. ingredientName = 'water'
-    this.ingredients[ingredientName] += quantity;
-    if (this.ingredients[ingredientName] > 200) {
-      this.ingredients[ingredientName] = 200;
-    }
+    let have = this.ingredients.get(ingredientName);
+    let final = have + quantity;
+    if (final > 200) final = 200;
+    this.ingredients.set(ingredientName, final);
   }
 
 

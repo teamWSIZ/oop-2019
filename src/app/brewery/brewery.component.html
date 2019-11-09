@@ -4,9 +4,15 @@
       <div class="card-header">Ingredient store</div>
       <div class="card-body">
         <ul>
-          <li>Water: {{ingredientService.water}}</li>
-          <li>Sugar: {{ingredientService.sugar}}</li>
-          <li>Hop: {{ingredientService.get_ingr_quantity('water')}}</li>
+
+          <li *ngFor="let ing of ingredientService.ingredients | keyvalue">
+            Skład {{ing.key}}: {{ingredientService.ingredients.get(ing.key)}}
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': percent_of_ingredient(ing.key)}">
+                {{ingredientService.ingredients.get(ing.key)}} </div>
+            </div>
+          </li>
+
         </ul>
 
       </div>
@@ -20,6 +26,11 @@
               *ngFor="let nazwa of ['Pomorskie', 'Śląskie', 'Mazowieckie', 'Małopolskie']">
         Pochodzienie {{nazwa}}
       </button>
+
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%' }"> {{progress}} </div>
+      </div>
 
 
     </div>

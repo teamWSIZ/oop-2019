@@ -9,6 +9,7 @@ import {IngredientService} from "../ingredient.service";
 })
 export class BreweryComponent implements OnInit {
   beerQuantity: 0;
+  progress = 5;
 
   constructor(public brewService: BrewService,
               public ingredientService: IngredientService) {
@@ -16,6 +17,12 @@ export class BreweryComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  percent_of_ingredient(ingName: string) {
+    let x = this.ingredientService.ingredients.get(ingName);
+    let percent = (x / 200) * 100;
+    return percent + '%';
   }
 
 }
