@@ -11,6 +11,8 @@ export class BreweryComponent implements OnInit {
   beerQuantity: 0;
   progress = 5;
 
+  orderedUnits = 0;
+
   constructor(public brewService: BrewService,
               public ingredientService: IngredientService) {
 
@@ -25,4 +27,19 @@ export class BreweryComponent implements OnInit {
     return percent + '%';
   }
 
+  //Funkcja wylicza ilość procent (zakładając max i obecną value), po czym dodaje znak '%'
+  prct(value: number, max_value: number): string {
+    return (value / max_value) * 100 + '%';
+  }
+
+  addOrderUnits() {
+    this.orderedUnits += 1;
+  }
+
+  decOrderUnits() {
+    this.orderedUnits -= 1;
+    if (this.orderedUnits<0) {
+      this.orderedUnits = 0;
+    }
+  }
 }

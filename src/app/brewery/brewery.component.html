@@ -28,11 +28,6 @@
       </button>
 
 
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress + '%' }"> {{progress}} </div>
-      </div>
-
-
     </div>
   </div>
   <div class="col-md-6 mt-1">
@@ -43,8 +38,26 @@
         <button class="btn btn-outline-info" (click)="brewService.ingredientsAvailable(beerQuantity, null)">
           Are ingredients there for {{beerQuantity}}hL miodowe?</button>
       </div>
-      <div class="card-footer"></div>
+
+
+
+      <div class="card-footer">
+        Zamówienie: {{orderedUnits}}  jednostek.
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': prct(orderedUnits, 10)}">
+            {{orderedUnits}}
+          </div>
+        </div>
+
+
+        <button class="btn btn-outline-info" (click)="addOrderUnits()"> + </button>
+        <button class="btn btn-outline-info" (click)="decOrderUnits()"> - </button>
+      </div>
     </div>
+
+
+
+
     <div class="card mt-1" >
       <div class="card-header">Beer store</div>
       <div class="card-body text-white" style="
