@@ -10,6 +10,7 @@ import { NiceFooterComponent } from './nice-footer/nice-footer.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { BreweryComponent } from './brewery/brewery.component';
 import {FormsModule} from "@angular/forms";
+import { BankViewComponent } from './bank-view/bank-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {FormsModule} from "@angular/forms";
     NiceFooterComponent,
     LecturesComponent,
     BreweryComponent,
+    BankViewComponent,
   ],
     imports: [
         BrowserModule,
