@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">Bank</div>
+  <div class="card-body">
+    Funds: {{current_funds}}
+    <button class="btn btn-outline-info" (click)="reload_funds()">Reload</button>
+    <br>
+    <input [(ngModel)]="amount">
+    <button class="btn btn-outline-info" (click)="deposit_funds()">Wpłać</button>
+    <button class="btn btn-outline-info" (click)="withdraw_funds()">Wypłać</button>
+  </div>
+</div>
