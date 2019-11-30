@@ -13,8 +13,16 @@ export class BankViewComponent implements OnInit {
   current_funds: number;
   amount: string;
 
+  bankSimple: Bank;
+  bankSkarbonka: Bank;
+
   constructor() {
-    this.bank = new SimpleBank(); //podczepiamy konkretny bank
+    //tworzymy banki, ustalając ich początkowy stan finansowy
+    this.bankSimple = new SimpleBank();
+    this.bankSkarbonka = new Skarbonka();
+
+    //ustalamy który ma być wyświetlany
+    this.bank = this.bankSimple;
     this.current_funds = 0;
   }
 
@@ -33,5 +41,15 @@ export class BankViewComponent implements OnInit {
 
   reload_funds() {
     this.current_funds = this.bank.get_funds('...');
+  }
+
+  selectSB() {
+    this.bank = this.bankSimple;
+    this.reload_funds();
+  }
+
+  selectSK() {
+    this.bank = this.bankSkarbonka;
+    this.reload_funds();
   }
 }
