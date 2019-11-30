@@ -11,6 +11,7 @@ import { LecturesComponent } from './lectures/lectures.component';
 import { BreweryComponent } from './brewery/brewery.component';
 import {FormsModule} from "@angular/forms";
 import { BankViewComponent } from './bank-view/bank-view.component';
+import { OnlineBankingComponent } from './online-banking/online-banking.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BankViewComponent } from './bank-view/bank-view.component';
     LecturesComponent,
     BreweryComponent,
     BankViewComponent,
+    OnlineBankingComponent,
   ],
     imports: [
         BrowserModule,

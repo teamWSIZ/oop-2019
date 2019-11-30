@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Bank} from "../_interfaces/bank";
 import {SimpleBank} from "../_interfaces/simple-bank";
+import {Skarbonka} from "../_interfaces/skarbonka";
 
 @Component({
   selector: 'app-bank-view',
@@ -18,10 +19,12 @@ export class BankViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.reload_funds();
   }
 
   deposit_funds() {
     this.bank.deposit_funds('...', parseInt(this.amount));
+    this.reload_funds();
   }
 
   withdraw_funds() {

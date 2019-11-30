@@ -26,4 +26,8 @@ export class Skarbonka implements Bank {
     return true;
   }
 
+  get_IBAN(): string {
+    return "IBAN_SKARBONKA_001";
+  }
+
 }

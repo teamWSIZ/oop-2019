@@ -6,4 +6,6 @@ export interface Bank {
 
   withdraw_funds(account: string, amount: number): boolean;
 
+  get_IBAN(): string;
+
 }

@@ -7,6 +7,12 @@ export class SimpleBank implements Bank {
     this.funds = 10;
   }
 
+  get_IBAN(): string {
+    return "IBAN_SIMPLE_001";
+  }
+
+
+
   deposit_funds(account: string, amount: number): boolean {
     this.funds += amount;
     return true;
@@ -20,5 +26,6 @@ export class SimpleBank implements Bank {
   get_funds(account: string): number {
     return this.funds;
   }
+
 
 }
