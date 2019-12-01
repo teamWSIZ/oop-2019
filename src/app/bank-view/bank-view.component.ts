@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Bank} from "../_interfaces/bank";
 import {SimpleBank} from "../_interfaces/simple-bank";
 import {Skarbonka} from "../_interfaces/skarbonka";
+import {HttpClient} from "@angular/common/http";
+import {FundsResponse} from "../model/funds-response";
+import {FundsChangeResponse} from "../model/funds-change-response";
 
 @Component({
   selector: 'app-bank-view',
@@ -16,7 +19,7 @@ export class BankViewComponent implements OnInit {
   bankSimple: Bank;
   bankSkarbonka: Bank;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     //tworzymy banki, ustalając ich początkowy stan finansowy
     this.bankSimple = new SimpleBank();
     this.bankSkarbonka = new Skarbonka();
@@ -52,4 +55,22 @@ export class BankViewComponent implements OnInit {
     this.bank = this.bankSkarbonka;
     this.reload_funds();
   }
+
+  getOnlineFunds() {
+    let url = 'http://10.10.0.21:5001/funds/get';
+    this.http.get<FundsResponse>(url).subscribe(res=>{
+      this.current_funds = res.funds;
+    })
+  }
+
+  addOnlineFunds(amount: number) {
+    let url = 'http://10.10.0.21:5001/funds/add?amount=' + amount;
+    // let url = 'http://10.10.0.21:5001/funds/draw?amount=' + amount;  //do wyciągania funduszy
+    this.http.get<FundsChangeResponse>(url).subscribe(changeResponse => {
+      console.log(`Funds changed OK`);
+    });
+  }
+
+
+
 }

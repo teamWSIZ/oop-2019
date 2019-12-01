@@ -12,6 +12,7 @@ import { BreweryComponent } from './brewery/brewery.component';
 import {FormsModule} from "@angular/forms";
 import { BankViewComponent } from './bank-view/bank-view.component';
 import { OnlineBankingComponent } from './online-banking/online-banking.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OnlineBankingComponent } from './online-banking/online-banking.componen
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
         FormsModule
     ],
   providers: [MenuComponent],
