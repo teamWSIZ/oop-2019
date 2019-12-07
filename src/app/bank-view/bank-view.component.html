@@ -3,8 +3,6 @@
   <div class="card-body">
     Funds: {{current_funds}}
     <button class="btn btn-outline-info" (click)="reload_funds()">Reload</button>
-    <button class="btn btn-outline-info" (click)="getOnlineFunds()">GetOnlineFunds</button>
-    <button class="btn btn-outline-info" (click)="addOnlineFunds(10)">AddOnlineFunds</button>
     <br>
     <input [(ngModel)]="amount">
     <button class="btn btn-outline-info" (click)="deposit_funds()">Wpłać</button>
@@ -14,5 +12,6 @@
     Wybór banku:
     <button class="btn btn-outline-info mr-1" (click)="selectSB()">SimpleBank</button>
     <button class="btn btn-outline-info" (click)="selectSK()">Skarbonka</button>
+    <button class="btn btn-outline-info" (click)="selectOnline()">OnlineBank</button>
   </div>
 </div>
