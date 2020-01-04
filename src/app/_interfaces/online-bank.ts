@@ -1,12 +1,13 @@
 import {Bank} from "./bank";
 import {HttpClient} from "@angular/common/http";
-import {interval} from "rxjs";
+import {interval, Subscription} from "rxjs";
 import {FundsResponse} from "../model/funds-response";
 import {FundsChangeResponse} from "../model/funds-change-response";
 
 export class OnlineBank implements Bank {
   last_funds_state : number; //poziom funduszy po ostatniej aktualizacji
   http : HttpClient;
+  w : Subscription;
 
   constructor(http : HttpClient) {
     this.last_funds_state = 0;
@@ -15,7 +16,7 @@ export class OnlineBank implements Bank {
   }
 
   private start_updates() {
-    interval(5000).subscribe(() => {
+    this.w = interval(5000).subscribe(() => {
       console.log('updating..');
       this.get_funds('');
     });
@@ -35,6 +36,7 @@ export class OnlineBank implements Bank {
     this.http.get<FundsResponse>(url).subscribe(res=>{
       this.last_funds_state = res.funds;
     });
+    console.log(`done`);
     return this.last_funds_state;
   }
 

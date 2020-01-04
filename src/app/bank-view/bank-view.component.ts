@@ -6,6 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {FundsResponse} from "../model/funds-response";
 import {FundsChangeResponse} from "../model/funds-change-response";
 import {OnlineBank} from "../_interfaces/online-bank";
+import {AaService} from "../aa.service";
 
 @Component({
   selector: 'app-bank-view',
@@ -21,7 +22,7 @@ export class BankViewComponent implements OnInit {
   bankSkarbonka: Bank;
   onlineBank: Bank;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private aaService : AaService, private aa: AaService) {
     //tworzymy banki, ustalając ich początkowy stan finansowy
     this.bankSimple = new SimpleBank();
     this.bankSkarbonka = new Skarbonka();

@@ -6,6 +6,7 @@ export class Skarbonka implements Bank {
 
   constructor() {
     this.funds = 0;
+    console.log(`Sprawdzamy czy działa funkcja foo()`);
   }
 
   deposit_funds(account: string, amount: number): boolean {

@@ -25,9 +25,6 @@ export class IngredientService {
     let water = this.ingredients.get('water');
 
 
-    for(let ing_name of this.ingredients.keys()) {
-      console.log(ing_name);
-    }
   }
 
   /**
