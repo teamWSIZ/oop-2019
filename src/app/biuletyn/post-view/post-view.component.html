@@ -1,0 +1,11 @@
+<div class="card mt-2">
+  <div class="card-header h4">{{post.title}}</div>
+  <div class="card-body">{{post.body}}</div>
+  <div class="card-footer" (click)="get_related_comments()">
+    <ul>
+      <li *ngFor="let c of comments"> ({{c.email}}) {{c.body.substr(0,40)}}</li>
+    </ul>
+
+  </div>
+
+</div>
