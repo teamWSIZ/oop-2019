@@ -14,11 +14,14 @@ body {
 
 .video {
   position: fixed;
-  z-index: -99;
+  z-index: -99; // jest pod wszystkim
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
+  //zoom: 1;
+  -webkit-transform: scale(1.2);
+  -webkit-transform-origin: center;
 }
 
 .horizontalbar {
