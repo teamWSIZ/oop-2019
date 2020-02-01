@@ -6,6 +6,7 @@ import {LecturesComponent} from "./lectures/lectures.component";
 import {BreweryComponent} from "./brewery/brewery.component";
 import {OnlineBankingComponent} from "./online-banking/online-banking.component";
 import {BiuletynComponent} from "./biuletyn/biuletyn.component";
+import {HardwareComponent} from "./hardware/hardware.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'brewrery', component: BreweryComponent },
   { path: 'banking', component: OnlineBankingComponent },
   { path: 'biuletyn', component: BiuletynComponent },
+  { path: 'hardware', component: HardwareComponent },
 
 ];
 

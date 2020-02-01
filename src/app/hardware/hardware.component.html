@@ -1,0 +1,29 @@
+<div class="row no-gutters">
+  <div class="col-md-6">
+
+    <div class="card">
+      <div class="card-header">Komputer</div>
+      <div class="card-body">
+        Ekran: {{ekran}}
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-outline-success" (click)="ekran = c.get_display_content()">refresh</button>
+        <button class="btn btn-outline-success ml-1" (click)="c.start()">start</button>
+        <button class="btn btn-outline-success ml-1" (click)="c.run('print', 'abra kadabra')">print</button>
+        <button class="btn btn-outline-success ml-1" (click)="c.run('clear','')">clear</button>
+        <button class="btn btn-outline-success ml-1" (click)="c.run('files','')">files</button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header h4"> Kontrola komputera </div>
+      <div class="card-body">
+        <button class="btn btn-outline-success">Reset computer</button>
+      </div>
+    </div>
+  </div>
+</div>
