@@ -9,8 +9,9 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
   gall_btn = [
-    "grafika 2D",
-    "grafika 3D"
+    'grafika 2D',
+    'grafika 3D',
+    'animacje'
   ]
 
   ngOnInit() {

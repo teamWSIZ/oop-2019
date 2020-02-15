@@ -1,8 +1,20 @@
 <div class="gallery">
   <div class="menu">
+
     <span class="btn mr-2" [ngClass]="{'btn-success': id == selected, 'btn-info': id != selected }"
           *ngFor="let zmbtn of buttons; let id = index"
-          (click)="changeGallery(id)" >{{zmbtn}}</span>
+          (click)="changeGallery(id)"
+          (contextmenu)="changeGallery(-1)" >{{zmbtn}}</span>
 
   </div>
+
+  <div class="card bg-dark" *ngIf="selected!=-1">
+    <div class="card-header" >
+      Galeria: {{buttons[selected]}}
+    </div>
+    <div class="card-body">
+      <img class="img-fluid" [src]="img" *ngFor="let img of images[selected]">
+    </div>
+  </div>
+
 </div>
