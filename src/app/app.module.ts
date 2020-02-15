@@ -16,6 +16,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {BiuletynComponent} from './biuletyn/biuletyn.component';
 import {PostViewComponent} from "./biuletyn/post-view/post-view.component";
 import { HardwareComponent } from './hardware/hardware.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HardwareComponent } from './hardware/hardware.component';
     BiuletynComponent,
     PostViewComponent,
     HardwareComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
