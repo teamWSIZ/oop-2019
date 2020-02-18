@@ -22,7 +22,7 @@ class DI {
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private pogoda : PogodaService) { }
+  constructor(public pogoda : PogodaService) { }
   designs: DI[];
   ngOnInit() {
     this.designs.push(new DI(1, 'aaa', 'http'));

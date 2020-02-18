@@ -22,7 +22,7 @@ export class BankViewComponent implements OnInit {
   bankSkarbonka: Bank;
   onlineBank: Bank;
 
-  constructor(private http: HttpClient, private aaService : AaService, private aa: AaService) {
+  constructor(private http: HttpClient, public aaService : AaService, public aa: AaService) {
     //tworzymy banki, ustalając ich początkowy stan finansowy
     this.bankSimple = new SimpleBank();
     this.bankSkarbonka = new Skarbonka();
